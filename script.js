@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-   const catalogData = {
+const catalogData = {
       men: {
         title: "Чоловіче взуття",
         items: [
@@ -161,159 +161,114 @@ if (container && currentCategory) {
   });
 }
 
-});
+// --- КОШИК --- //
+let cart = [];
 
-
-
-
-
-let categoryKey = 'men';
-  if (window.location.pathname.includes('women')) categoryKey = 'women';
-  else if (window.location.pathname.includes('kids')) categoryKey = 'kids';
-
-  const currentCategory = catalogData[categoryKey];
-  const container = document.getElementById('products-container');
-  
-  let cart = []; // Масив для кошика
-  let currentUser = null; // Поточний користувач
-
-  // Рендеринг карток
-  if (container && currentCategory) {
-    document.getElementById('page-title').textContent = currentCategory.title;
-    container.innerHTML = ''; 
-    
-    currentCategory.items.forEach(product => {
-      const card = document.createElement('div');
-      card.className = 'product-card';
-      card.innerHTML = `
-        <div class="product-image-box">
-          <img src="${product.image}" alt="${product.title.replace('<br>', ' ')}">
-        </div>
-        <p class="product-name">${product.title}</p>
-        <div class="product-footer">
-          <span class="product-price">${product.price}</span>
-          <button class="add-to-cart-btn" onclick="addToCart(${product.id})">В кошик</button>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-  }
-
-  // --- ЛОГІКА МОДАЛЬНИХ ВІКОН --- //
-  const overlay = document.getElementById('modal-overlay');
-  const cartModal = document.getElementById('cart-modal');
-  const regModal = document.getElementById('reg-modal');
-  const profileModal = document.getElementById('profile-modal');
-
-  // Відкриття кошика (прив'язуємо до кнопки в шапці)
-  document.querySelector('.icon-btn[aria-label="Кошик"]').onclick = () => {
-    overlay.style.display = 'block';
-    cartModal.style.display = 'flex';
-    updateCartUI();
-  };
-
-  // Відкриття профілю/реєстрації
-  document.querySelector('.icon-btn[aria-label="Профіль"]').onclick = () => {
-    overlay.style.display = 'block';
-    if (currentUser) {
-      document.getElementById('profile-name').textContent = currentUser;
-      profileModal.style.display = 'flex';
-    } else {
-      regModal.style.display = 'flex';
-    }
-  };
-
-  function closeModals() {
-    overlay.style.display = 'none';
-    cartModal.style.display = 'none';
-    regModal.style.display = 'none';
-    profileModal.style.display = 'none';
-  }
-
-  // Закриття при кліку на фон
-  overlay.onclick = closeModals;
-
-  // --- ЛОГІКА РЕЄСТРАЦІЇ --- //
-  function registerUser() {
-    const nameInput = document.getElementById('reg-name').value;
-    if(nameInput.trim() !== '') {
-      currentUser = nameInput;
-      closeModals();
-      alert(`Вітаємо, ${currentUser}! Ви успішно зареєструвались.`);
-    }
-  }
-
-  // --- ЛОГІКА КОШИКА --- //
-  function addToCart(id) {
-    const product = currentCategory.items.find(item => item.id === id);
-    if (product) {
-      cart.push(product);
-      alert('Товар додано у кошик!');
-    }
-  }
-
-  function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCartUI();
-  }
-
-  function updateCartUI() {
-    const cartContainer = document.getElementById('cart-items-container');
-    const totalPriceEl = document.getElementById('cart-total-price');
-    
-    if (cart.length === 0) {
-      cartContainer.innerHTML = '<p style="color: #fff; text-align: center;">Кошик порожній</p>';
-      totalPriceEl.textContent = '0';
-      return;
-    }
-
-    cartContainer.innerHTML = '';
-    let total = 0;
-
-    cart.forEach((item, index) => {
-      // Витягуємо числа з ціни "1750 грн."
-      const priceNum = parseInt(item.price.replace(/\D/g, ''));
-      total += priceNum;
-
-      const itemEl = document.createElement('div');
-      itemEl.className = 'cart-item';
-      itemEl.innerHTML = `
-        <img src="${item.image}" alt="">
-        <div class="cart-item-info">
-          <div class="cart-item-title">${item.title}</div>
-          <div class="cart-item-price">${item.price}</div>
-        </div>
-        <button class="remove-btn" onclick="removeFromCart(${index})">✕</button>
-      `;
-      cartContainer.appendChild(itemEl);
-    });
-
-    totalPriceEl.textContent = total;
-  }
-
-
-  function openCart() {
-  document.getElementById('modal-overlay').style.display = 'block';
-  document.getElementById('cart-modal').style.display = 'flex';
-  updateCartUI(); // Оновлюємо вміст кошика
+try {
+  cart = JSON.parse(localStorage.getItem('foots_cart')) || [];
+} catch (e) {
+  cart = [];
 }
 
-// Відкриття профілю або реєстрації (залежно від того, чи увійшов користувач)
-function openProfileOrReg() {
-  document.getElementById('modal-overlay').style.display = 'block';
-  
-  if (currentUser) {
-    document.getElementById('profile-name').textContent = currentUser;
-    document.getElementById('profile-modal').style.display = 'flex';
-  } else {
-    document.getElementById('reg-modal').style.display = 'flex';
-  }
+function saveCart() {
+  try {
+    localStorage.setItem('foots_cart', JSON.stringify(cart));
+  } catch (e) {}
 }
 
-// Закриття всіх модальних вікон
+function getPriceNumber(price) {
+  return parseInt(String(price).replace(/\D/g, '')) || 0;
+}
+
+function updateCartUI() {
+  const cartContainer = document.getElementById('cart-items-container');
+  const totalPriceEl = document.getElementById('cart-total-price');
+  if (!cartContainer || !totalPriceEl) return;
+
+  if (cart.length === 0) {
+    cartContainer.innerHTML = '<p class="empty-cart">Кошик порожній</p>';
+    totalPriceEl.textContent = '0';
+    return;
+  }
+
+  cartContainer.innerHTML = '';
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += getPriceNumber(item.price);
+
+    const itemEl = document.createElement('div');
+    itemEl.className = 'cart-item';
+    itemEl.innerHTML = `
+      <img src="${item.image}" alt="">
+      <div class="cart-item-info">
+        <div class="cart-item-title">${item.title.replace(/<br>/g, ' ')}</div>
+        <div class="cart-item-price">${item.price}</div>
+      </div>
+      <button class="remove-btn" data-index="${index}" aria-label="Видалити">✕</button>
+    `;
+
+    itemEl.querySelector('.remove-btn').addEventListener('click', () => {
+      cart.splice(index, 1);
+      saveCart();
+      updateCartUI();
+    });
+
+    cartContainer.appendChild(itemEl);
+  });
+
+  totalPriceEl.textContent = total;
+}
+
 function closeModals() {
-  document.getElementById('modal-overlay').style.display = 'none';
-  document.getElementById('cart-modal').style.display = 'none';
-  document.getElementById('reg-modal').style.display = 'none';
-  document.getElementById('profile-modal').style.display = 'none';
+  const overlay = document.getElementById('modal-overlay');
+  if (overlay) overlay.style.display = 'none';
 }
+
+function openCart() {
+  const overlay = document.getElementById('modal-overlay');
+  if (!overlay) return;
+  overlay.style.display = 'flex';
+  updateCartUI();
+}
+
+// Клік по кнопці "В кошик" (делегування на сітці товарів)
+const productsContainer = document.getElementById('products-container');
+if (productsContainer) {
+  productsContainer.addEventListener('click', (e) => {
+    const btn = e.target.closest('.add-to-cart-btn');
+    if (!btn) return;
+
+    const id = Number(btn.dataset.id);
+    const product = currentCategory.items.find(p => p.id === id);
+    if (!product) return;
+
+    cart.push({ ...product });
+    saveCart();
+    alert('Товар додано у кошик!');
+  });
+}
+
+// Відкриття кошика за кліком на іконку
+const cartBtn = document.querySelector('.icon-btn[aria-label="Кошик"]');
+if (cartBtn) cartBtn.addEventListener('click', openCart);
+
+// Закриття модального вікна
+const overlay = document.getElementById('modal-overlay');
+if (overlay) {
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModals();
+  });
+}
+const cartCloseBtn = document.getElementById('cart-close');
+if (cartCloseBtn) cartCloseBtn.addEventListener('click', closeModals);
+
+// Оформлення замовлення
+const orderBtn = document.getElementById('order-btn');
+if (orderBtn) {
+  orderBtn.addEventListener('click', () => {
+    alert('Замовлення прийнято');
+  });
+}
+
+});

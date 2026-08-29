@@ -132,66 +132,32 @@
     </div>
   </footer>
 
-  Ось код для реалізації модальних вікон кошика, реєстрації та профілю згідно з вашими макетами. Цей код потрібно додати у ваші існуючі HTML-файли (наприклад, men.html або women.html).
 
-Крок 1: HTML для модальних вікон
-Додайте цей блок коду в самий низ сторінки, перед закриваючим тегом </body> та скриптами:
 
-HTML
+
 <!-- Затемнення фону -->
 <div class="overlay" id="modal-overlay"></div>
 
-<!-- Модальне вікно: Кошик -->
-<div class="modal cart-modal" id="cart-modal">
-  <div class="modal-header">
-    <h2>Кошик</h2>
-    <button class="close-btn" onclick="closeModals()">
-      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-    </button>
-  </div>
-  <div class="cart-items" id="cart-items-container">
-    <p style="color: #fff; text-align: center;">Кошик порожній</p>
-  </div>
-  <div class="modal-footer">
-    <div class="total-price">Ціна разом: <span id="cart-total-price">0</span> грн.</div>
-    <button class="action-btn">Оформити замовлення</button>
-  </div>
-</div>
 
-<!-- Модальне вікно: Реєстрація -->
-<div class="modal auth-modal" id="reg-modal">
-  <div class="modal-header">
-    <h2>Реєстрація</h2>
-    <button class="close-btn" onclick="closeModals()">
-      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-    </button>
-  </div>
-  <div class="auth-form">
-    <input type="text" id="reg-name" placeholder="Ім'я">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Пароль">
-    <button class="action-btn" onclick="registerUser()">Зареєструватися</button>
-  </div>
-</div>
 
-<!-- Модальне вікно: Профіль -->
-<div class="modal auth-modal" id="profile-modal">
-  <div class="modal-header">
-    <div class="profile-info">
-      <div class="avatar-circle">
-        <svg viewBox="0 0 24 24" fill="#55647d"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-      </div>
-      <h2 id="profile-name">*Ім'я*</h2>
-    </div>
-    <button class="close-btn" onclick="closeModals()">
-      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-    </button>
-  </div>
-  <h3 class="history-title">Історія замовлень</h3>
-  <div class="history-box">
-    <!-- Історія замовлень -->
-  </div>
-</div>
+
 </body>
+
+  <!-- Модальне вікно кошика -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="cart-modal">
+      <div class="modal-header">
+        <h2>Кошик</h2>
+        <button class="modal-close" id="cart-close" aria-label="Закрити">&times;</button>
+      </div>
+      <div class="cart-items" id="cart-items-container"></div>
+      <div class="cart-total">
+        <span>Разом:</span>
+        <span id="cart-total-price">0</span>
+        <span>грн.</span>
+      </div>
+      <button class="order-btn" id="order-btn">Замовити</button>
+    </div>
+  </div>
 <script src="script.js"></script>
 </html>
