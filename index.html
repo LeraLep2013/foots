@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--<header>
+        <img class="iconlogo" src="logo.png">
+        <nav class="nav">
+      <a href="#" class="nav-link">Головна</a>
+      <a href="#" class="nav-link">Категорії</a>
+      <a href="#" class="nav-link">Відгуки</a>
+      <a href="#" class="nav-link">Контакти</a>
+    </nav>
+        <img class="icon" src="avatar.png">
+        <img class="icon1" src="buscket.png">
+    </header> -->
+ <header class="header">
+    <a href="#" class="logo">
+      <img src="logo.png" alt="FOOTS - взуття для вас">
+    </a>
+
+    <nav class="nav">
+  <a href="#main" class="nav-link">Головна</a>
+  <a href="#categories" class="nav-link">Категорії</a>
+  <a href="#reviews" class="nav-link">Відгуки</a>
+  <a href="#contacts" class="nav-link">Контакти</a>
+</nav>
+
+    <div class="user-actions">
+      <button class="icon-btn" aria-label="Профіль">
+        <img src="avatar.png" alt="Профіль">
+      </button>
+      <button class="icon-btn" aria-label="Кошик">
+        <img src="buscket2.png" alt="Кошик">
+      </button>
+    </div>
+  </header>
+
+  <!-- Головна секція -->
+  <section id="main" class="hero">
+    <div class="hero-image-container">
+      <img id="hero-img" src="1shoes1.jpg" alt="Кросівки Foots" class="hero-image">
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">FOOTS</h1>
+      <p class="hero-subtitle">Взуття для всіх</p>
+      <button class="btn-primary">Відгуки</button>
+    </div>
+  </section>
+
+  <section id="categories" class="categories-section">
+    <h2 class="categories-title">Категорії</h2>
+
+    <div class="categories-grid">
+      
+      <!-- Чоловіче -->
+      <a href="men.html" class="category-card">
+        <div class="category-image-wrapper">
+          <img src="2shoes1.jpg" alt="Чоловіче взуття" class="category-image">
+        </div>
+        <span class="category-name">Чоловіче</span>
+      </a>
+
+      <!-- Жіноче -->
+      <a href="women.html" class="category-card">
+        <div class="category-image-wrapper">
+          <img src="2shoes2.jpg" alt="Жіноче взуття" class="category-image">
+        </div>
+        <span class="category-name">Жіноче</span>
+      </a>
+
+      <!-- Дитяче -->
+      <a href="kids.html" class="category-card">
+        <div class="category-image-wrapper">
+          <img src="2shoes3.jpg" alt="Дитяче взуття" class="category-image">
+        </div>
+        <span class="category-name">Дитяче</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Секція "Відгуки" -->
+  <section id="reviews" class="reviews-section">
+    <h2 class="reviews-title">Відгуки</h2>
+
+    <div class="reviews-list">
+      <!-- Замініть шляхи на ваші зображення відгуків -->
+      <img src="Frame 1.png" alt="Відгук Наталія Д." class="review-card-img">
+      <img src="Frame 2.png" alt="Відгук Роман Г." class="review-card-img">
+      <img src="Frame 3.png" alt="Відгук Вероніка А." class="review-card-img">
+    </div>
+  </section>
+
+  <!-- Підвал сайту (Footer) -->
+  <footer id="contacts" class="footer">
+    <div class="footer-container">
+      
+      <!-- Соцмережі -->
+      <div class="footer-column">
+        <h3 class="footer-title">Наші соціальні мережі</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" aria-label="Facebook">
+            <img src="facebook.png" alt="Facebook" class="social-icon">
+          </a>
+          <a href="https://www.instagram.com/" aria-label="Instagram">
+            <img src="instagram.png" alt="Instagram" class="social-icon">
+          </a>
+          <a href="https://www.tiktok.com/" aria-label="TikTok">
+            <img src="tiktok.png" alt="TikTok" class="social-icon">
+          </a>
+        </div>
+      </div>
+
+      <!-- Контакти -->
+      <div class="footer-column">
+        <h3 class="footer-title">Щоб зв'язатися з нами</h3>
+        <div class="contacts-list">
+          <a href="tel:+380670000000" class="contact-phone">+ 38 (067) 000 00 00</a>
+          <a href="tel:+380990000000" class="contact-phone">+ 38 (099) 000 00 00</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Skechers MAX PROTECT",
+    "price": "5499 грн.",
+    "image": "https://s1.media.intertop.com/load/KM5796/big/MAIN.webp?_gl=1*1kbj5vq*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDkzMTgkajU2JGwwJGgwhttps://s1.media.intertop.com/load/KM5796/big/MAIN.webp?_gl=1*1kbj5vq*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDkzMTgkajU2JGwwJGgw",
+    "buttonText": "В кошик"
+  },
+  {
+    "id": 2,
+    "title": "Skechers UNO LITE 2",
+    "price": "3799 грн.",
+    "image": "https://s1.media.intertop.com/load/KM5791/big/MAIN.webp?_gl=1*159ymbt*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDk0MTIkajU1JGwwJGgw",
+    "buttonText": "В кошик"
+  },
+  {
+    "id": 3,
+    "title": "adidas CRAZYCHAOS 2000",
+    "price": "3359 грн.",
+    "image": "https://s1.media.intertop.com/load/CN4219/big/MAIN.webp?_gl=1*cwapge*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDk1MzUkajE1JGwwJGgw",
+    "buttonText": "В кошик"
+  },
+  {
+    "id": 4,
+    "title": "Champion RD18",
+    "price": "1679 грн.",
+    "image": "https://s1.media.intertop.com/load/CMM31/big/MAIN.webp?_gl=1*1et9ou9*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDk2MjUkajQ2JGwwJGgw",
+    "buttonText": "В кошик"
+  },
+  {
+    "id": 5,
+    "title": "NIKE PACIFIC",
+    "price": "3992 грн.",
+    "image": "https://s1.media.intertop.com/load/CE855/big/MAIN.webp?_gl=1*1o0uc97*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDk2NzQkajU3JGwwJGgwg",
+    "buttonText": "В кошик"
+  },
+  {
+    "id": 6,
+    "title": "New Balance 574 CORE",
+    "price": "4319 грн.",
+    "image": "https://s1.media.intertop.com/load/MQ602/big/MAIN.webp?_gl=1*1allcxh*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MTAzODMkajI3JGwwJGgw",
+    "buttonText": "В кошик"
+  },
+  {
+    "id": 7,
+    "title": "Estro",
+    "price": "3630 грн.",
+    "image": "https://s1.media.intertop.com/load/mp883550/big/MAIN.webp?_gl=1*hgrb0c*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MTA0NTkkajM0JGwwJGgw",
+    "buttonText": "В кошик"
+  },
+  {
+    "id": 8,
+    "title": "Timberland MAPLE GROVE",
+    "price": "8299 грн.",
+    "image": "https://s1.media.intertop.com/load/TF5706/big/MAIN.webp?_gl=1*1cjfwnu*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MTA1MzIkajMyJGwwJGgw",
+    "buttonText": "В кошик"
+  },
+  {
+    "id": 9,
+    "title": "Skechers AIDAN",
+    "price": "1899 грн.",
+    "image": "https://s1.media.intertop.com/load/KM5705/big/MAIN.webp?_gl=1*182jw3u*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MTA2MTckajMxJGwwJGgw",
+    "buttonText": "В кошик"
+  }
+]
