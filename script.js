@@ -10,8 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setInterval(() => {
     current = (current + 1) % images.length;
-    document.getElementById("hero-img").src = images[current];
-   }, 3000);});
+    const heroImg = document.getElementById("hero-img");
+    if (heroImg) {
+      (heroImg).setAttribute('src', images[current]);
+    }
+   }, 3000);
 
 
 
@@ -25,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "id": 101,
     "title": "Skechers MAX PROTECT",
     "price": "5499 грн.",
-    "image": "https://s1.media.intertop.com/load/KM5796/big/MAIN.webp?_gl=1*1kbj5vq*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDkzMTgkajU2JGwwJGgwhttps://s1.media.intertop.com/load/KM5796/big/MAIN.webp?_gl=1*1kbj5vq*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDkzMTgkajU2JGwwJGgw",
+    "image": "https://s1.media.intertop.com/load/KM5796/big/MAIN.webp?_gl=1*1kbj5vq*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDkzMTgkajU2JGwwJGgw",
     "buttonText": "В кошик"
   },
   {
@@ -53,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "id": 105,
     "title": "NIKE PACIFIC",
     "price": "3992 грн.",
-    "image": "https://s1.media.intertop.com/load/CE855/big/MAIN.webp?_gl=1*1o0uc97*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDk2NzQkajU3JGwwJGgwg",
+    "image": "https://s1.media.intertop.com/load/CE855/big/MAIN.webp?_gl=1*1o0uc97*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODc0MDkzMTQkbzEkZzEkdDE3ODc0MDk2NzQkajU3JGwwJGgw",
     "buttonText": "В кошик"
   },
   {
@@ -89,64 +92,34 @@ document.addEventListener('DOMContentLoaded', () => {
       women: {
         title: "Жіноче взуття",
         items: [
-          { id: 201, title: "Шкіряні Чорні<br>Туфлі на подборах", price: "1750 грн.", image: "women-heels-black.png" },
-          { id: 202, title: "Білі Легкі<br>Кросівки", price: "1950 грн.", image: "women-sneakers-white.png" },
-          { id: 203, title: "Бежеві Замшеві<br>Лофери", price: "1499 грн.", image: "women-loafers-beige.png" },
-          { id: 204, title: "Елегантні Червоні<br>Балетки", price: "1200 грн.", image: "women-flats-red.png" },
-          { id: 205, title: "Чорні Осінні<br>Ботильйони", price: "2300 грн.", image: "women-boots-black.png" },
-          { id: 206, title: "Нюдові Босоніжки<br>на підборах", price: "1650 грн.", image: "women-sandals-nude.png" },
-          { id: 207, title: "Спортивні Рожеві<br>Кросівки", price: "1800 грн.", image: "women-sneakers-pink.png" },
-          { id: 208, title: "Класичні Бежеві<br>Човники", price: "1900 грн.", image: "women-pumps-beige.png" },
-          { id: 209, title: "Високі Шкіряні<br>Сапоги", price: "3100 грн.", image: "women-high-boots.png" }
+          { id: 201, title: "Skechers UNO RYZE", price: "4799 грн.", image: "https://s1.media.intertop.com/load/KW9742/big/MAIN.webp?_gl=1*dy5osl*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTIzMDckajI5JGwwJGgw" },
+          { id: 202, title: "Braska", price: "3009 грн.", image: "https://s1.media.intertop.com/load/BS4528/big/MAIN.webp?_gl=1*9p6jvq*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTI0MDMkajU0JGwwJGgw" },
+          { id: 203, title: "ECCO ECCO RECEPTOR XP W", price: "8999 грн.", image: "https://s1.media.intertop.com/load/ZW9410/big/MAIN.webp?_gl=1*13uqisg*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTI1MDEkajI1JGwwJGgw" },
+          { id: 204, title: "INTERTOP x KVITKOVA", price: "2499 грн.", image: "https://s1.media.intertop.com/load/INT47/big/MAIN.webp?_gl=1*15nbprd*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTI1NzMkajM3JGwwJGgw" },
+          { id: 205, title: "Skechers DESERT KISS", price: "1749 грн.", image: "https://s1.media.intertop.com/load/KW9611/big/MAIN.webp?_gl=1*1n0mv9a*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTI2MzMkajUyJGwwJGgw" },
+          { id: 206, title: "ECCO DRESS CLASSIC 15", price: "6999 грн.", image: "https://s1.media.intertop.com/load/ZW9382/big/MAIN.webp?_gl=1*o2w1ra*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTI3MTUkajQzJGwwJGgw" },
+          { id: 207, title: "Calvin Klein FLATF ESPA", price: "3439 грн.", image: "https://s1.media.intertop.com/load/CKF724/big/MAIN.webp?_gl=1*4pignv*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTI4MTYkajIkbDAkaDA." },
+          { id: 208, title: "Calvin Klein SQUARED", price: "7789 грн.", image: "https://s1.media.intertop.com/load/CKF759/big/MAIN.webp?_gl=1*1dsrsa8*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTI4ODEkajQ3JGwwJGgw" },
+          { id: 209, title: "Skechers KEEPSAKES COZY", price: "4499 грн.", image: "https://s1.media.intertop.com/load/KW9419/big/MAIN.webp?_gl=1*vb7b*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTMwMTckajQyJGwwJGgw" }
         ]
       },
       kids: {
         title: "Дитяче взуття",
         items: [
-          { id: 301, title: "Яскраві Дитячі<br>Кросівки на липучках", price: "899 грн.", image: "kids-sneakers-color.png" },
-          { id: 302, title: "Шкіряні Шкільні<br>Туфлі", price: "1100 грн.", image: "kids-shoes-black.png" },
-          { id: 303, title: "Сині Замшеві<br>Мокасини", price: "950 грн.", image: "kids-moccasins-blue.png" },
-          { id: 304, title: "Зимові Теплі<br>Черевики", price: "1550 грн.", image: "kids-winter-boots.png" },
-          { id: 305, title: "Літні Яскраві<br>Сандалі", price: "799 грн.", image: "kids-sandals.png" },
-          { id: 306, title: "Білі Текстильні<br>Кеди", price: "850 грн.", image: "kids-sneakers-white.png" },
-          { id: 307, title: "Гумові Черевички<br>від дощу", price: "650 грн.", image: "kids-rain-boots.png" },
-          { id: 308, title: "Рожеві Святкові<br>Балетки", price: "920 грн.", image: "kids-flats-pink.png" },
-          { id: 309, title: "Спортивні Дитячі<br>Кросівки", price: "1050 грн.", image: "kids-sport-shoes.png" }
+          { id: 301, title: "Skechers UNO LITE", price: "3499 грн.", image: "https://s1.media.intertop.com/load/KK4008/big/MAIN.webp?_gl=1*32f8yx*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTMwODkkajQwJGwwJGgw" },
+          { id: 302, title: "Geox STEPPIEUP BOY", price: "1499 грн.", image: "https://s1.media.intertop.com/load/XK9332/big/MAIN.webp?_gl=1*1m0jx9z*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTMxNjAkajM5JGwwJGgw" },
+          { id: 303, title: "adidas TENSAUR SPORT 3.0", price: "1999 грн.", image: "https://s1.media.intertop.com/load/CP430/big/MAIN.webp?_gl=1*1g8zss9*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTMyNzIkajE4JGwwJGgw" },
+          { id: 304, title: "Vans Knu Skool", price: "4499 грн.", image: "https://s1.media.intertop.com/load/V4155/big/MAIN.webp?_gl=1*vlupry*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTM3OTckajM1JGwwJGgw" },
+          { id: 305, title: "adidas Grand Court", price: "2599 грн.", image: "https://s1.media.intertop.com/load/mp999393/big/MAIN.webp?_gl=1*19u01ce*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTM0NDQkajU3JGwwJGgw" },
+          { id: 306, title: "Crocs", price: "1749 грн.", image: "https://s1.media.intertop.com/load/CRC105/big/MAIN.webp?_gl=1*imu3bz*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTM1MTQkajQ3JGwwJGgw" },
+          { id: 307, title: "Crocs", price: "1519 грн.", image: "https://s1.media.intertop.com/load/CRC85/big/MAIN.webp?_gl=1*kjp1qy*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTM1NzIkajU2JGwwJGgw" },
+          { id: 308, title: "Vans Mary Jane", price: "1249 грн.", image: "https://s1.media.intertop.com/load/V3646/big/MAIN.webp?_gl=1*gqrvbi*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTM2MjYkajIkbDAkaDA." },
+          { id: 309, title: "ECCO SP.1 LITE INFANT", price: "3999 грн.", image: "https://s1.media.intertop.com/load/ZK4488/big/MAIN.webp?_gl=1*1wgh2md*_gcl_au*ODEwNzExMzE0LjE3ODc0MDkzMTM.*_ga*NjE4MzczNzM3LjE3ODc0MDkzMTQ.*_ga_1T8JR6P0ZJ*czE3ODgwMTIyNzYkbzIkZzEkdDE3ODgwMTM2ODgkajQyJGwwJGgw" }
         ]
       }
     };
 
-    // Для сторінки Чоловічого взуття обираємо категорію 'men'
-    // (Для women.html встановіть 'women', для kids.html — 'kids')
-    // const categoryKey = 'men'; 
-
-    // const currentCategory = catalogData[categoryKey];
-
-    // // Встановлюємо динамічно заголовок сторінки
-    // document.getElementById('page-title').textContent = currentCategory.title;
-
-    // // Рендеримо картки товарів у сітку
-    // const container = document.getElementById('products-container');
-
-    // currentCategory.items.forEach(product => {
-    //   const card = document.createElement('div');
-    //   card.className = 'product-card';
-      
-    //   card.innerHTML = `
-    //     <div class="product-image-box">
-    //       <img src="${product.image}" alt="${product.title.replace('<br>', ' ')}">
-    //     </div>
-    //     <p class="product-name">${product.title}</p>
-    //     <div class="product-footer">
-    //       <span class="product-price">${product.price}</span>
-    //       <button class="add-to-cart-btn" data-id="${product.id}">В кошик</button>
-    //     </div>
-    //   `;
-      
-    //   container.appendChild(card);
-    // });
-
-
+    /** @type {'men' | 'women' | 'kids'} */
     let categoryKey = 'men';
 
 if (window.location.pathname.includes('women')) {
@@ -155,7 +128,7 @@ if (window.location.pathname.includes('women')) {
   categoryKey = 'kids';
 }
 
-const currentCategory = catalogData[categoryKey];
+const currentCategory = catalogData[categoryKey] || catalogData.men;
 
 // Безпечне оновлення заголовка
 const pageTitleElement = document.getElementById('page-title');
@@ -169,7 +142,7 @@ const container = document.getElementById('products-container');
 if (container && currentCategory) {
   container.innerHTML = ''; // Очищаємо перед рендером
   
-  currentCategory.items.forEach(product => {
+  currentCategory.items.forEach((/** @type {{id: number, title: string, price: string, image: string, buttonText?: string}} */ product) => {
     const card = document.createElement('div');
     card.className = 'product-card';
     
@@ -183,3 +156,164 @@ if (container && currentCategory) {
         <button class="add-to-cart-btn" data-id="${product.id}">${product.buttonText || 'В кошик'}</button>
       </div>
     `;
+
+    container.appendChild(card);
+  });
+}
+
+});
+
+
+
+
+
+let categoryKey = 'men';
+  if (window.location.pathname.includes('women')) categoryKey = 'women';
+  else if (window.location.pathname.includes('kids')) categoryKey = 'kids';
+
+  const currentCategory = catalogData[categoryKey];
+  const container = document.getElementById('products-container');
+  
+  let cart = []; // Масив для кошика
+  let currentUser = null; // Поточний користувач
+
+  // Рендеринг карток
+  if (container && currentCategory) {
+    document.getElementById('page-title').textContent = currentCategory.title;
+    container.innerHTML = ''; 
+    
+    currentCategory.items.forEach(product => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <div class="product-image-box">
+          <img src="${product.image}" alt="${product.title.replace('<br>', ' ')}">
+        </div>
+        <p class="product-name">${product.title}</p>
+        <div class="product-footer">
+          <span class="product-price">${product.price}</span>
+          <button class="add-to-cart-btn" onclick="addToCart(${product.id})">В кошик</button>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  // --- ЛОГІКА МОДАЛЬНИХ ВІКОН --- //
+  const overlay = document.getElementById('modal-overlay');
+  const cartModal = document.getElementById('cart-modal');
+  const regModal = document.getElementById('reg-modal');
+  const profileModal = document.getElementById('profile-modal');
+
+  // Відкриття кошика (прив'язуємо до кнопки в шапці)
+  document.querySelector('.icon-btn[aria-label="Кошик"]').onclick = () => {
+    overlay.style.display = 'block';
+    cartModal.style.display = 'flex';
+    updateCartUI();
+  };
+
+  // Відкриття профілю/реєстрації
+  document.querySelector('.icon-btn[aria-label="Профіль"]').onclick = () => {
+    overlay.style.display = 'block';
+    if (currentUser) {
+      document.getElementById('profile-name').textContent = currentUser;
+      profileModal.style.display = 'flex';
+    } else {
+      regModal.style.display = 'flex';
+    }
+  };
+
+  function closeModals() {
+    overlay.style.display = 'none';
+    cartModal.style.display = 'none';
+    regModal.style.display = 'none';
+    profileModal.style.display = 'none';
+  }
+
+  // Закриття при кліку на фон
+  overlay.onclick = closeModals;
+
+  // --- ЛОГІКА РЕЄСТРАЦІЇ --- //
+  function registerUser() {
+    const nameInput = document.getElementById('reg-name').value;
+    if(nameInput.trim() !== '') {
+      currentUser = nameInput;
+      closeModals();
+      alert(`Вітаємо, ${currentUser}! Ви успішно зареєструвались.`);
+    }
+  }
+
+  // --- ЛОГІКА КОШИКА --- //
+  function addToCart(id) {
+    const product = currentCategory.items.find(item => item.id === id);
+    if (product) {
+      cart.push(product);
+      alert('Товар додано у кошик!');
+    }
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCartUI();
+  }
+
+  function updateCartUI() {
+    const cartContainer = document.getElementById('cart-items-container');
+    const totalPriceEl = document.getElementById('cart-total-price');
+    
+    if (cart.length === 0) {
+      cartContainer.innerHTML = '<p style="color: #fff; text-align: center;">Кошик порожній</p>';
+      totalPriceEl.textContent = '0';
+      return;
+    }
+
+    cartContainer.innerHTML = '';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+      // Витягуємо числа з ціни "1750 грн."
+      const priceNum = parseInt(item.price.replace(/\D/g, ''));
+      total += priceNum;
+
+      const itemEl = document.createElement('div');
+      itemEl.className = 'cart-item';
+      itemEl.innerHTML = `
+        <img src="${item.image}" alt="">
+        <div class="cart-item-info">
+          <div class="cart-item-title">${item.title}</div>
+          <div class="cart-item-price">${item.price}</div>
+        </div>
+        <button class="remove-btn" onclick="removeFromCart(${index})">✕</button>
+      `;
+      cartContainer.appendChild(itemEl);
+    });
+
+    totalPriceEl.textContent = total;
+  }
+
+
+  function openCart() {
+  document.getElementById('modal-overlay').style.display = 'block';
+  document.getElementById('cart-modal').style.display = 'flex';
+  updateCartUI(); // Оновлюємо вміст кошика
+}
+
+// Відкриття профілю або реєстрації (залежно від того, чи увійшов користувач)
+function openProfileOrReg() {
+  document.getElementById('modal-overlay').style.display = 'block';
+  
+  if (currentUser) {
+    document.getElementById('profile-name').textContent = currentUser;
+    document.getElementById('profile-modal').style.display = 'flex';
+  } else {
+    document.getElementById('reg-modal').style.display = 'flex';
+  }
+}
+
+// Закриття всіх модальних вікон
+function closeModals() {
+  document.getElementById('modal-overlay').style.display = 'none';
+  document.getElementById('cart-modal').style.display = 'none';
+  document.getElementById('reg-modal').style.display = 'none';
+  document.getElementById('profile-modal').style.display = 'none';
+}
